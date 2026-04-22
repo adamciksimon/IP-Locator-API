@@ -1,6 +1,31 @@
-name: sample-golang
+name: publicapi-api
 services:
 - name: web
   github:
-    repo: digitalocean/sample-golang
+    repo: adamciksimon/IP-Locator-API
     branch: main
+  build_command: go build -o bin/publicapi-api ./cmd/api
+  run_command: bin/publicapi-api
+  http_port: 3333
+  envs:
+  - key: STRIPE_SECRET_KEY
+    scope: RUN_TIME
+    type: SECRET
+  - key: STRIPE_WEBHOOK_SECRET
+    scope: RUN_TIME
+    type: SECRET
+  - key: DB_HOST
+    scope: RUN_TIME
+  - key: DB_PORT
+    scope: RUN_TIME
+  - key: DB_USER
+    scope: RUN_TIME
+  - key: DB_PASSWORD
+    scope: RUN_TIME
+    type: SECRET
+  - key: DB_NAME
+    scope: RUN_TIME
+  - key: DB_SSLMODE
+    scope: RUN_TIME
+  - key: FRONTEND_URL
+    scope: RUN_TIME
