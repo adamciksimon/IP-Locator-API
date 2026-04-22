@@ -4,8 +4,9 @@ services:
   github:
     repo: adamciksimon/IP-Locator-API
     branch: main
-  build_command: go build -o bin/publicapi-api ./cmd/api
-  run_command: bin/publicapi-api
+  source_dir: publicapi-api
+  build_command: go build -o bin/api ./cmd/api
+  run_command: bin/api
   http_port: 3333
   envs:
   - key: STRIPE_SECRET_KEY

@@ -1,1 +1,2 @@
-web: bin/publicapi-api
+web: bin/api
+
