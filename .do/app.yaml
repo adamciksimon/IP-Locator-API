@@ -4,7 +4,6 @@ services:
   github:
     repo: adamciksimon/IP-Locator-API
     branch: main
-  source_dir: publicapi-api
   build_command: go build -o bin/api ./cmd/api
   run_command: bin/api
   http_port: 3333
